@@ -5,6 +5,7 @@
 		"isolatedModules": false,
 		"moduleResolution": "Node",
 		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
 		"resolveJsonModule": true,
 		"target": "es6",
 		"lib": ["es6", "dom"],

@@ -1,5 +1,11 @@
+import { ConfigEnvironmentSchema } from '../../cypress.config'
+
 declare global {
 	namespace Cypress {
+		interface Cypress {
+			env<T extends keyof ConfigEnvironmentSchema>(key: T): ConfigEnvironmentSchema[T]
+		}
+
 		interface Chainable {
 			/**
 			 * Custom command to set a value in localStorage.
