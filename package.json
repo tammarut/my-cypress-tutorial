@@ -1,0 +1,27 @@
+{
+	"name": "cypress-tutorial",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"cypress:open": "cypress open",
+		"cypress:runHeadless": "cypress run --headless",
+		"cypress:runDefault": "cypress run --spec cypress/e2e/test-typescript.cy.ts",
+		"cypress:runChrome": "cypress run --browser chrome --spec cypress/e2e/mouse-event.cy.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@testing-library/cypress": "^9.0.0",
+		"cypress": "^12.14.0",
+		"eslint": "^8.43.0",
+		"eslint-plugin-cypress": "^2.13.3",
+		"prettier": "^2.8.8",
+		"typescript": "4.9.5"
+	},
+	"volta": {
+		"node": "18.13.0",
+		"npm": "8.19.3"
+	}
+}

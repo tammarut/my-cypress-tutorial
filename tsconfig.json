@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"noEmit": true,
+		"isolatedModules": false,
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"target": "es6",
+		"lib": ["es6", "dom"],
+		"types": ["cypress", "@testing-library/cypress"]
+	},
+	"include": ["**/*.ts"],
+	"exclude": ["node_modules"]
+}
