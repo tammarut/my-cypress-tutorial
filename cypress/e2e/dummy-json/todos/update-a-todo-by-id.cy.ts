@@ -1,6 +1,8 @@
 import { Todo } from './todo'
 
 describe('Update a todo by ID (RESTful API Testing)', () => {
+	const dummyjsonUrl = Cypress.env('DUMMYJSON_URL')
+
 	it('should update a todo completed=true successfully', () => {
 		// Arrange
 		const id = 2
@@ -11,7 +13,7 @@ describe('Update a todo by ID (RESTful API Testing)', () => {
 		// Act
 		cy.request<Required<Todo>>({
 			method: 'PUT',
-			url: `https://dummyjson.com/todos/${id}`,
+			url: dummyjsonUrl + `/todos/${id}`,
 			headers: { 'Content-Type': 'application/json' },
 			body: requestBody,
 		}).then((response) => {

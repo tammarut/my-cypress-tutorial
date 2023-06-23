@@ -1,13 +1,15 @@
 import { Todo } from './todo'
 
 describe('Get a single todo by ID (RESTful API Testing)', () => {
+	const dummyjsonUrl = Cypress.env('DUMMYJSON_URL')
+
 	it('should get a todo by ID successfully', () => {
 		// Arrange
 		const id = 40
 		// Act
 		cy.request<Todo>({
 			method: 'GET',
-			url: `https://dummyjson.com/todos/${id}`,
+			url: dummyjsonUrl + `/todos/${id}`,
 		}).then((response) => {
 			// Assert
 			expect(response.status).to.equal(200)

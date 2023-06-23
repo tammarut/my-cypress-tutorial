@@ -1,10 +1,13 @@
 describe('Paginate todos with limit and skip (RESTful API Testing)', () => {
+	const DUMMYJSON_URL = Cypress.env('DUMMYJSON_URL')
+	const PATH_NAME = '/todos'
+
 	it('should paginate todos limit=5 skip=0 successfully', () => {
 		// Arrange
 		const limit = 5
 		const skip = 0
 		const queryParams = new URLSearchParams({ limit: String(limit), skip: String(skip) })
-		const url = 'https://dummyjson.com/todos' + '?' + queryParams.toString()
+		const url = DUMMYJSON_URL + PATH_NAME + '?' + queryParams.toString()
 		// Act
 		cy.request({
 			method: 'GET',
@@ -33,7 +36,7 @@ describe('Paginate todos with limit and skip (RESTful API Testing)', () => {
 		const limit = 5
 		const skip = 5
 		const queryParams = new URLSearchParams({ limit: String(limit), skip: String(skip) })
-		const url = 'https://dummyjson.com/todos' + '?' + queryParams.toString()
+		const url = DUMMYJSON_URL + PATH_NAME + '?' + queryParams.toString()
 		// Act
 		cy.request({
 			method: 'GET',

@@ -1,4 +1,6 @@
 describe('Delete a todo by ID (RESTful API Testing)', () => {
+	const dummyjsonUrl = Cypress.env('DUMMYJSON_URL')
+
 	it('should delete a todo successfully', () => {
 		// Arrange
 		const id = 5
@@ -6,7 +8,7 @@ describe('Delete a todo by ID (RESTful API Testing)', () => {
 		// Act
 		cy.request({
 			method: 'DELETE',
-			url: `https://dummyjson.com/todos/${id}`,
+			url: dummyjsonUrl + `/todos/${id}`,
 		}).then((response) => {
 			// Assert
 			expect(response.status).to.equal(200)

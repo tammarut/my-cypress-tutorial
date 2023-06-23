@@ -7,7 +7,7 @@ export interface ConfigEnvironmentSchema {
 
 dotenv.config()
 
-export default defineConfig<ConfigEnvironmentSchema>({
+export default defineConfig({
 	env: {
 		...process.env,
 	},

@@ -8,12 +8,14 @@ interface Response {
 }
 
 describe('Get all todos (RESTful API Testing)', () => {
+	const dummyjsonUrl = Cypress.env('DUMMYJSON_URL')
+
 	it('should get all todos successfully', () => {
 		// Arrange
 		// Act
 		cy.request<Response>({
 			method: 'GET',
-			url: `https://dummyjson.com/todos`,
+			url: dummyjsonUrl + '/todos',
 		}).then((response) => {
 			// Assert
 			expect(response.status).to.equal(200)
