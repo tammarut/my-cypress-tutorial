@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 
 export interface ConfigEnvironmentSchema {
 	readonly DUMMYJSON_URL: string
+	readonly CURA_HEALTHCARE_USERNAME: string
+	readonly CURA_HEALTHCARE_PASSWORD: string
 }
 
 dotenv.config()
