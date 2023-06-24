@@ -27,6 +27,24 @@ import '@testing-library/cypress/add-commands'
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // ───────────── Custom commands ────────────
+Cypress.Commands.add('seedLocalStorage', (key: string, value: string) => {
+	Cypress.log({
+		// $el: jQuery element for the command if it exists
+		name: 'seedLocalStorage',
+		displayName: 'seedLocalStorage',
+		message: `key: ${key}, value: ${value}`,
+		consoleProps: () => {
+			return {
+				Key: key,
+				Value: value,
+				'Local Storage': window.localStorage,
+			}
+		},
+	})
+
+	localStorage.setItem(key, value)
+})
+
 Cypress.Commands.add('setLocalStorage', (key, value) => {
 	cy.window().then((window) => {
 		window.localStorage.setItem(key, value)

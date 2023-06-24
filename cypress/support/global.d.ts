@@ -8,6 +8,13 @@ declare global {
 
 		interface Chainable {
 			/**
+			 * Custom command that seeds local storage with the following params:
+			 * @param key
+			 * @param value
+			 */
+			seedLocalStorage(key: string, value: string): Chainable
+
+			/**
 			 * Custom command to set a value in localStorage.
 			 * @example cy.setLocalStorage('key', 'value')
 			 */
