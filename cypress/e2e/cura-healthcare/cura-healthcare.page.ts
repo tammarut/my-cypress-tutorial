@@ -82,9 +82,8 @@ export class CURAHealthcarePage {
 	}
 
 	selectVisitDateOnCalendar(visitDate: string) {
-		cy.findByRole('textbox', { name: /visit date \(required\)/i })
-			.click()
-			.type(visitDate)
+		cy.findByRole('textbox', { name: /visit date \(required\)/i }).click()
+		cy.findByRole('textbox', { name: /visit date \(required\)/i }).type(visitDate)
 
 		// Select on the Date picker
 		// Click on <td> "10"
