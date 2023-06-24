@@ -22,6 +22,8 @@
 		"@testing-library/cypress": "^9.0.0",
 		"@types/chai": "^4.3.5",
 		"@types/mocha": "^10.0.1",
+		"@typescript-eslint/eslint-plugin": "^5.60.0",
+		"@typescript-eslint/parser": "^5.60.0",
 		"cypress": "^12.14.0",
 		"eslint": "^8.43.0",
 		"eslint-plugin-chai-friendly": "^0.7.2",

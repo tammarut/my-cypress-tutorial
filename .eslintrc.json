@@ -1,0 +1,10 @@
+{
+	"root": true,
+	"env": { "browser": true, "cypress/globals": true },
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": true
+	},
+	"plugins": ["@typescript-eslint", "cypress", "chai-friendly"],
+	"extends": ["plugin:cypress/recommended", "plugin:@typescript-eslint/recommended", "plugin:chai-friendly/recommended"]
+}
