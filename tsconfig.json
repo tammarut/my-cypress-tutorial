@@ -20,6 +20,6 @@
 		"lib": ["es6", "dom"],
 		"types": ["cypress", "@testing-library/cypress"]
 	},
-	"include": ["**/*.ts"],
+	"include": ["cypress", "**/*.ts"],
 	"exclude": ["node_modules"]
 }

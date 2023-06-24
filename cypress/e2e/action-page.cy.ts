@@ -17,24 +17,22 @@ describe('template spec', () => {
 
 	it('clear an input field', () => {
 		cy.visit('/commands/actions')
-		const describeField = cy.findByLabelText('Describe:')
-		describeField.scrollIntoView({ easing: 'linear', duration: 200 }).should('be.visible')
-		describeField.type('Test alice')
 
-		describeField.should('have.value', 'Test alice')
-		describeField.clear()
-		describeField.should('have.value', '')
+		cy.findByLabelText('Describe:').scrollIntoView({ easing: 'linear', duration: 200 })
+		cy.findByLabelText('Describe:').should('be.visible').type('Test alice')
+
+		cy.findByLabelText('Describe:').should('have.value', 'Test alice').clear()
+		cy.findByLabelText('Describe:').should('have.value', '')
 	})
 
 	it.only('check a checkbox', () => {
 		cy.visit('/commands/actions')
 
-		const checkHeader = cy.findByRole('heading', { name: /\.check\(\)/i })
-		checkHeader.scrollIntoView({ offset: { top: -100, left: 0 }, duration: 100 }).should('be.visible')
+		cy.findByRole('heading', { name: /\.check\(\)/i }).scrollIntoView({ offset: { top: -100, left: 0 }, duration: 100 })
+		cy.findByRole('heading', { name: /\.check\(\)/i }).should('be.visible')
 
-		const allCheckboxes = cy.get('.action-checkboxes [type="checkbox"]')
-		allCheckboxes.should('have.length', 3)
-		allCheckboxes.first().check().should('be.checked')
+		cy.get('.action-checkboxes [type="checkbox"]').should('have.length', 3).first().check()
+		cy.get('.action-checkboxes [type="checkbox"]').should('be.checked')
 
 		cy.get('.action-checkboxes [type="checkbox"]').eq(1).should('be.disabled')
 		cy.get('.action-checkboxes [type="checkbox"]').eq(2).should('not.be.checked')

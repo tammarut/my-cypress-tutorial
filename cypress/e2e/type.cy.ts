@@ -35,9 +35,6 @@ describe('My first type', () => {
 
 		cy.get('textarea').should('exist').and('be.disabled')
 
-		cy.wait(1500).then(() => {
-			console.log('Test is finished! 2')
-		})
 		console.log('Test is finished! 1')
 	})
 })
